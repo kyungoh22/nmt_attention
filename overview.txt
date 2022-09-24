@@ -1,0 +1,71 @@
+Project comprises three main stages: 
+
+
+
+1. Data Wrangling
+
+Notebook: data_wrangling.ipynb
+Custom module: preprocessing.py
+
+STEPS
+
+- Pre-process source & target sentences 
+- Tokenize the sentences (word-based), convert them into sequences of integers
+- Save as numpy arrays (csv files)
+- Save tokenizers as json files
+- Create embedding matrices for source and target vocabulary
+- Save embedding matrices
+
+DIRECTORIES AND FILES 
+
+./tokenizers
+- source_sentence_tokenizer.json
+- target_sentence_tokenizer.json
+
+./tensors
+- source_train_tensor.csv
+- source_test_tensor.csv
+- target_train_tensor.csv
+- target_test_tensor.csv
+
+./embeddings
+- embedding_matrix_source.csv
+- embedding_matrix_target.csv
+
+
+
+2. Training
+Notebook: train.ipynb
+Custom module: model_components.py
+
+STEPS
+
+- Load numpy arrays
+- Load tokenizers
+- Load embedding matrices
+- Create Tensorflow dataset using numpy arrays
+- Instantiate model components 
+- Define functions for computing loss and gradients 
+- Set up checkpoints
+- Train / optimize variables
+- Save model weights
+
+DIRECTORIES AND FILES
+./checkpoints
+./saved_models/model/encoder
+./saved_models/model/decoder
+
+
+3. Translating
+Notebook: translate.ipynb
+Custom module: model_components.py
+
+STEPS
+- Load numpy arrays
+- Load pre-trained tokenizers
+- Load embedding matrices
+- Instantiate model (with same parameters as defined during training)
+- Load trained weights
+- Define functions for translating random inputs from data set
+- Translate sample source sentences 
+
