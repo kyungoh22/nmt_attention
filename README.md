@@ -20,7 +20,7 @@ The overview of the project is as follows:
 - The Encoder comprises a series of bi-directional LSTM units. 
 - The Encoder feeds the source sentence through an Embedding layer (in our case with pre-trained weights), 
 before passing the embedding vectors through the LSTM units. 
-- We retrieve the hidden state vectors **h<t>** from the LSTM units for every time-step. 
+- We retrieve the hidden state vectors **h<<t>>** from the LSTM units for every time-step. 
 - This way, we have a state vector representation for every single word in the source sentence.
 
 ### Decoder
