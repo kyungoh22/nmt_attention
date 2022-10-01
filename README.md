@@ -7,7 +7,7 @@ The overview of the project is as follows:
 
 # Neural Machine Translation with Attention
 
-### Intuition for the Attention mechanism
+### Intuition for the Attention mechanism
 - A Neural Machine Translation model based on only LSTM units predicts a translation by using **a single state vector** to represent the entire source sentence all at once. 
 - However, it is difficult to encode an entire sentence using just one state vector, particularly if we are dealing with a very long sentence. 
 - The idea behind the Attention mechanism is to predict each word in the target sentence by paying attention to only a select number of words in the source sentence. 
