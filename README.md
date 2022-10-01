@@ -20,21 +20,21 @@ The overview of the project is as follows:
 - The Encoder comprises a series of bi-directional LSTM units. 
 - The Encoder feeds the source sentence through an Embedding layer (in our case with pre-trained weights), 
 before passing the embedding vectors through the LSTM units. 
-- We retrieve the hidden state vectors **h<<t>>** from the LSTM units for every time-step. 
+- We retrieve the hidden state vectors **h[t]** from the LSTM units for every time-step. 
 - This way, we have a state vector representation for every single word in the source sentence.
 
 ### Decoder
 
 - The Decoder comprises an Attention layer and a series of LSTM units.
 - The Attention layer outputs a **context vector** for every single time-step in the Decoder. 
-- At each time-step, the Decoder concatenates the context vector from the current time-step with the Decoder output from the previous time-step (**s<t-1>**). 
+- At each time-step, the Decoder concatenates the context vector from the current time-step with the Decoder output from the previous time-step (**s[t-1]**). 
 - This concatenated vector is used as the input for the LSTM unit at the current time-step.
 
 ### Attention mechanism
-- The context vector is a linear combination of all of the Encoder's hidden state vectors (**h<t>**).
+- The context vector is a linear combination of all of the Encoder's hidden state vectors (**h[t]**).
 – The weights of the state vectors represent how much the different words in the source sentence should be considered for the prediction at the current time-step. 
 - The Attention layer is used to compute the weights. 
-- To compute each weight, we concatenate the Decoder hidden state from the previous time-step (**s<t-1>**) with the Encoder hidden state from the current time-step (**h<t>**), before passing the concatenated vector through two dense layers.
+- To compute each weight, we concatenate the Decoder hidden state from the previous time-step (**s[t-1]**) with the Encoder hidden state from the current time-step (**h[t]**), before passing the concatenated vector through two dense layers.
 - The weights are normalised using the softmax function.
 
 
